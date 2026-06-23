@@ -18,7 +18,7 @@ params [
 	"_case"
 ];
 
-if (isServer && {!isNil "GOL_OKS_AMBIENCE"} && {GOL_OKS_AMBIENCE isEqualTo 1}) then {
+if(isServer && GOL_OKS_AMBIENCE isEqualTo 1) then {
 
 	waitUntil {sleep 1; !(isNil "OKS_FaceSwap")};
 	[east,"russian"] spawn OKS_FaceSwap;
@@ -225,16 +225,12 @@ switch (_case) do {
 		
 	};
 
-	case 95: {
+	case 94: {
 		// Deliting all mine's off EOD Training
 		{
 			deleteVehicle _x;
-		} forEach allMines;
-
-		{
-			deleteVehicle _x;
 		} forEach nearestObjects [
-			[15000,16975,0],
+			[14969.5,16967.8,0.898001],
 			[
 				"ATMine",
 				"rhs_mine_TM43",
@@ -250,7 +246,7 @@ switch (_case) do {
 				"rhs_uxo_ptab25m_1",
 				"rhs_uxo_ao1_2"
 			],
-			500
+			150
 		];
 
 	};
