@@ -225,6 +225,36 @@ switch (_case) do {
 		
 	};
 
+	case 95: {
+		// Deliting all mine's off EOD Training
+		{
+			deleteVehicle _x;
+		} forEach allMines;
+
+		{
+			deleteVehicle _x;
+		} forEach nearestObjects [
+			[15000,16975,0],
+			[
+				"ATMine",
+				"rhs_mine_TM43",
+				"rhs_mine_ptm1",
+				"IEDLandBig_F",
+				"IEDUrbanBig_F",
+				"IEDLandSmall_F",
+				"IEDUrbanSmall_F",
+				"BombCluster_01_UXO1_F",
+				"BombCluster_01_UXO3_F",
+				"BombCluster_02_UXO1_F",
+				"BombCluster_03_UXO1_F",
+				"rhs_uxo_ptab25m_1",
+				"rhs_uxo_ao1_2"
+			],
+			500
+		];
+
+	};
+
 	default {
 		ERROR(FORMAT_1("Case missing: %1", _case));
 	};
